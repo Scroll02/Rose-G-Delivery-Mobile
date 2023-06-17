@@ -1,0 +1,27 @@
+.termsCondition__container {
+  margin: auto;
+  padding: 50px;
+  text-align: justify;
+  color: var(--text-color1);
+}
+h2 {
+  text-align: center;
+  color: var(--background-color2);
+}
+.termsConditions__content {
+  background: rgba(178, 178, 178, 0.5);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .termsCondition__container {
+    padding: 30px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .termsCondition__container {
+    padding: 5px;
+  }
+}

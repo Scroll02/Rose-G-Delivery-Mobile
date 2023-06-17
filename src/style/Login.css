@@ -1,0 +1,158 @@
+.login__body {
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.login__container {
+  padding: 2rem;
+  border: 3px solid var(--background-color2);
+  border-radius: 50px;
+  background-color: var(--background-color1);
+  width: 700px;
+}
+.login__container h5 {
+  color: var(--background-color2);
+  font-size: 1.3rem;
+}
+.loginForm__container,
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Email and Password Fields */
+.loginForm__group {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-self: center;
+  justify-content: center;
+  width: 80%;
+}
+
+.loginForm__group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-color1);
+  align-self: flex-start;
+}
+.loginForm__input {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--text-color1);
+  box-shadow: 3px 3px var(--background-color2);
+  color: var(--text-color2);
+  font-size: 1rem;
+  transition: border-color 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+}
+.loginForm__input:focus {
+  outline: none;
+  border-color: var(--background-color2);
+}
+
+.login__input-container {
+  position: relative;
+}
+
+.login__input-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.visibility-icon {
+  color: var(--text-color2);
+}
+
+/* Login Buttons */
+.signIn__btn {
+  width: 80%;
+  align-self: center;
+  border: none;
+  background-color: var(--background-color2);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.createAcc__btn,
+.connectGoogle__btn,
+.guest__btn {
+  width: 70%;
+  margin: 10px;
+  align-self: center;
+  background-color: var(--text-color1);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn__icon {
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
+}
+.dontHave__txt {
+  font-weight: 600;
+  color: var(--background-color2);
+}
+.youAgree__txt {
+  font-size: 0.8rem;
+  margin: 10px 0;
+}
+.youAgree__txt label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.termsConditionTxt,
+.privacyPolicyTxt {
+  text-decoration: underline;
+  color: var(--background-color2);
+  cursor: pointer;
+}
+.forgotPassTxt {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.forgotPassTxt a {
+  text-decoration: none;
+  color: var(--background-color2);
+}
+.forgotPassTxt a:hover {
+  color: var(--background-color2);
+  cursor: pointer;
+}
+
+.or__txt {
+  font-weight: 600;
+  color: var(--background-color2);
+}
+
+@media only screen and (max-width: 500px) {
+  .login__body {
+    padding: 1rem;
+  }
+
+  .login__container {
+    padding: 1rem;
+  }
+  .login__container h5 {
+    font-size: 0.9rem;
+  }
+}

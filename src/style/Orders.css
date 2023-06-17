@@ -1,0 +1,102 @@
+.orderCards__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid red; */
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+.orderCard {
+  display: block;
+  width: 100%;
+  margin: 30px 0;
+  padding: 20px;
+  background: var(--text-color1);
+  border: 1px solid var(--text-color2);
+  box-shadow: 10px 10px 2px var(--background-color1);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.orderCard:hover {
+  box-shadow: 3px 6px 9px var(--background-color1);
+  transform: translateY(-5px);
+}
+
+.orderCard__body {
+  text-align: center;
+}
+
+.orderCard__body h4.pending {
+  color: brown;
+}
+.orderCard__body h4.confirmed {
+  color: darkorange;
+}
+.orderCard__body h4.prepared {
+  color: darkblue;
+}
+.orderCard__body h4.delivery,
+.orderCard__body h4.ready-for-pickup {
+  color: lightseagreen;
+}
+.orderCard__body h6 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.orderCard__body h6.delivered {
+  color: green;
+}
+.orderCard__body h6.cancelled {
+  color: red;
+}
+
+.orderCard__body p {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.orderCard__body p:last-child {
+  margin-bottom: 0;
+}
+
+.no-underline {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Empty Orders */
+.order__now {
+  text-align: center;
+  margin-top: 20px;
+}
+.order__now img {
+  width: 35%;
+  height: auto;
+}
+.order__now h1 {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--text-color1);
+}
+
+@media only screen and (max-width: 992px) {
+  .order__now img {
+    width: 50%;
+  }
+  .order__now h1 {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .order__now img {
+    width: 60%;
+  }
+  .order__now h1 {
+    font-size: 0.9rem;
+  }
+}
