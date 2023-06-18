@@ -1,7 +1,7 @@
 import { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "com.example.app",
+  appId: "com.examplee.app",
   appName: "RoseG-Delivery-Mobile",
   webDir: "build",
   server: {

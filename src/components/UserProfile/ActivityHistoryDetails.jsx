@@ -171,6 +171,13 @@ const ActivityHistoryDetails = () => {
                     </span>
                   </div>
 
+                  {orderData?.cancellationReason && (
+                    <div className="orderHistory__item">
+                      <label>Reason for Cancellation:&nbsp;</label>
+                      <span>{orderData?.cancellationReason}</span>
+                    </div>
+                  )}
+
                   <div className="orderHistory__item">
                     <label>Delivery Address:&nbsp;</label>
                     <span>{orderData?.orderAddress}</span>

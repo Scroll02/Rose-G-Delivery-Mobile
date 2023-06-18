@@ -238,6 +238,7 @@ const Login = () => {
             role: "Customer",
             createdAt: serverTimestamp(),
             lastLoginAt: new Date().toISOString(), // Set the initial value of lastLoginAt
+            profileImageUrl: "",
           });
         } else {
           // User already exists, so update the lastLoginAt field
@@ -249,7 +250,7 @@ const Login = () => {
 
         // Call the updateActivityLog function
         await updateActivityLog(googleUid, {
-          profileImageUrl: "", // Add the profile image URL if available
+          profileImageUrl: "",
           firstName: firstName,
           lastName: lastName,
           lastLoginAt: new Date().toISOString(),

@@ -139,6 +139,7 @@ const Registration = () => {
         uid: user.uid,
         emailVerified: "Not Verified",
         createdAt: serverTimestamp(),
+        profileImageUrl: "",
       });
 
       // Send email verification

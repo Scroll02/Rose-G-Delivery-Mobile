@@ -222,41 +222,44 @@ const Checkout = () => {
   useEffect(() => {
     const getCurrentTime = () => {
       const now = new Date();
-      const oneHourAhead = new Date(now.getTime() + 60 * 60 * 1000); // 1 hour ahead
       const times = [];
-      let currentTime = oneHourAhead;
-
+      let currentTime = new Date(now.getTime());
+      const closingTime = new Date(now.getTime());
       const dayOfWeek = currentTime.getDay();
       const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
       const startTime = isWeekend ? 8 : 8; // 8:00 AM
-      const endTime = isWeekend ? 19 : 18; // 7:00 PM on weekends, 6:00 PM on weekdays
+      const endTime = isWeekend ? 20 : 19; // 8:00 PM on weekends, 7:00 PM on weekdays
 
-      while (currentTime.getDate() === oneHourAhead.getDate()) {
-        const hours = currentTime.getHours();
-        const minutes = currentTime.getMinutes();
+      closingTime.setHours(endTime, 0, 0); // Set the closing time
 
-        // Exclude the time range from 12:00 PM to 1:00 PM
+      currentTime.setMinutes(0); // Set minutes to 0 to align with quarter-hour intervals
+
+      while (currentTime < closingTime) {
+        const timeDifferenceInMinutes = Math.round(
+          (closingTime.getTime() - currentTime.getTime()) / 60000
+        );
+
+        const currentHour = currentTime.getHours();
+        const currentMinute = currentTime.getMinutes();
+
         if (
-          !(hours === 12 && minutes === 0) &&
-          !(hours === 13 && minutes === 0)
+          (isWeekend || currentHour < endTime) &&
+          currentHour >= startTime &&
+          timeDifferenceInMinutes >= 60 && // Check if more than 60 minutes remaining
+          (currentMinute === 0 ||
+            currentMinute === 15 ||
+            currentMinute === 30 ||
+            currentMinute === 45) &&
+          !(currentHour === 12 && currentMinute >= 0 && currentMinute < 60) // Exclude 12:00 PM to 12:59 PM
         ) {
-          if (
-            (isWeekend || hours < endTime) &&
-            hours >= startTime &&
-            (minutes === 0 ||
-              minutes === 15 ||
-              minutes === 30 ||
-              minutes === 45)
-          ) {
-            const formattedTime = currentTime.toLocaleTimeString([], {
-              hour: "2-digit",
-              minute: "2-digit",
-            });
-            times.push(formattedTime);
-          }
+          const formattedTime = currentTime.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          });
+          times.push(formattedTime);
         }
 
-        currentTime = new Date(currentTime.getTime() + 1 * 60 * 1000); // Add 1 minute
+        currentTime.setMinutes(currentTime.getMinutes() + 15); // Add 15 minutes to current time
       }
 
       return times;
