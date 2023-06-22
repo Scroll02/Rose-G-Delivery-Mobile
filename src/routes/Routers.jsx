@@ -15,7 +15,6 @@ import ForgotPassword from "../pages/ForgotPassword";
 import UserProfile from "../pages/UserProfile";
 import ActivityHistoryDetails from "../components/UserProfile/ActivityHistoryDetails";
 import Settings from "../pages/Settings";
-import handler from "../api/paymongo_webhook";
 
 const Routers = () => {
   return (

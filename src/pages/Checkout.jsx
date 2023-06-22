@@ -205,7 +205,7 @@ const Checkout = () => {
 
   // Redirect to paymongo checkout page if Gcash is selected and total amount > 100
   useEffect(() => {
-    if (paymentMethod === "GCash" && bagTotalAmount > 100) {
+    if (paymentMethod === "GCash" && bagTotalAmount >= 100) {
       window.open("https://paymongo.page/l/rose-garden", "_blank");
     } else if (paymentMethod === "GCash" && bagTotalAmount < 100) {
       showErrorToast("Minimum purchase amount for GCash is ₱100.00.", 2000);

@@ -211,7 +211,7 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
 
     // this custom parameter will let the user select the Google account they want to use for signing in
-    googleProvider.setCustomParameters({ prompt: "select_account" });
+    // googleProvider.setCustomParameters({ prompt: "select_account" });
 
     signInWithPopup(auth, googleProvider)
       .then(async (result) => {
